@@ -128,6 +128,30 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(payload)
 
+        elif parsed.path == "/script.js":
+            try:
+                with open(os.path.join(os.path.dirname(__file__), "script.js"), "rb") as f:
+                    js = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/javascript")
+                self.end_headers()
+                self.wfile.write(js)
+            except FileNotFoundError:
+                self.send_response(404)
+                self.end_headers()
+                self.wfile.write(b"script.js not found")
+        elif parsed.path == "/styles.css":
+            try:
+                with open(os.path.join(os.path.dirname(__file__), "styles.css"), "rb") as f:
+                    css = f.read()
+                self.send_response(200)
+                self.send_header("Content-Type", "text/css")
+                self.end_headers()
+                self.wfile.write(css)
+            except FileNotFoundError:
+                self.send_response(404)
+                self.end_headers()
+                self.wfile.write(b"styles.css not found")
         elif parsed.path in ("/", "/widget", "/widget.html"):
             try:
                 with open(WIDGET_HTML_PATH, "rb") as f:
