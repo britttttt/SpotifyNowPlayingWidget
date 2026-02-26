@@ -1,28 +1,42 @@
 body {
-  background: #000;
-  font-family: sans-serif;
-  color: white;
-  padding: 16px;
+    font-family: sans-serif;
+    color: white;
+    background: rgba(46, 43, 43, 0.2);
 }
 
 #card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    gap: 12px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
 }
 
 #art {
-  width: 80px;
-  height: 80px;
-  border-radius: 8px;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
 }
 
 #title {
-  font-size: 16px;
-  font-weight: bold;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(48, 45, 45);
 }
 
 #artist {
-  font-size: 13px;
-  color: #aaa;
+    font-size: 13px;
+    align-self: flex-start;
+    justify-content: flex-start;
+    color: #524c4c;
+}
+
+#col {
+    flex-direction: column;
+    align-content: center;
+    gap: 12px;
 }
