@@ -1,28 +1,75 @@
 body {
-  background: #000;
   font-family: sans-serif;
   color: white;
-  padding: 16px;
+  background: rgba(46, 43, 43, 0.2);
 }
 
 #card {
   display: flex;
-  align-items: center;
   gap: 12px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 0.5px solid rgba(223, 250, 244, 0.815);
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease;
 }
 
 #art {
   width: 80px;
   height: 80px;
   border-radius: 8px;
+  margin: 10px;
+  flex-shrink: 0;
 }
 
 #title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
+  color: rgb(48, 45, 45);
 }
 
 #artist {
-  font-size: 13px;
-  color: #aaa;
+  font-size: 18px;
+  color: #000000;
+}
+
+#col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+@keyframes trackChange {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.track-change {
+  animation: trackChange 0.5s ease forwards;
+}
+
+#card.hidden {
+  pointer-events: none;
+  animation: vanish 1s cubic-bezier(0.5, 1, 0.89, 1) forwards;
+}
+
+@keyframes vanish {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }

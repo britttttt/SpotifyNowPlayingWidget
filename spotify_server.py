@@ -114,7 +114,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_response(200)
                 self.send_header("Content-Type", "text/html")
                 self.end_headers()
-                self.wfile.write(b"Auth completed! You may now close this tab")
+                self.wfile.write(b"Diva, your Spotify is connected, and you may now close this tab")
             else:
                 self.send_response(400)
                 self.end_headers()
