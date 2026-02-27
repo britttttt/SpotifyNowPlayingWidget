@@ -5,6 +5,15 @@ async function poll() {
   const data = await res.json()
 
   if (data && data.title) {
+    const isPlaying = data.is_playing
+    console.log('is_playing:', isPlaying)
+    
+    if (isPlaying) {
+      document.getElementById('card').classList.remove('hidden')
+    } else {
+      document.getElementById('card').classList.add('hidden')
+    }
+
     if (data.title !== lastTitle){
       animateTrackChange()
       lastTitle = data.title

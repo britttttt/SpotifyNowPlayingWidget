@@ -14,12 +14,15 @@ body {
     border-radius: 16px;
     border: .5px solid rgba(223, 250, 244, 0.815);
     box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease;
 }
 
 #art {
-    width: 80px;
-    height: 80px;
-    border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  margin: 10px;
+  flex-shrink: 0;
 }
 
 #title {
@@ -29,16 +32,15 @@ body {
 }
 
 #artist {
-    font-size: 13px;
-    align-self: flex-start;
-    justify-content: flex-start;
-    color: #000000;
+  font-size: 13px;
+  color: #000000;
 }
 
 #col {
-    flex-direction: column;
-    align-content: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
 }
 
 @keyframes trackChange {
@@ -48,4 +50,10 @@ body {
 
 .track-change {
   animation: trackChange 0.5s ease forwards;
+}
+
+#card.hidden {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
 }
