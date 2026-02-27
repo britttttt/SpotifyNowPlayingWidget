@@ -1,20 +1,20 @@
 body {
-    font-family: sans-serif;
-    color: white;
-    background: rgba(46, 43, 43, 0.2);
+  font-family: sans-serif;
+  color: white;
+  background: rgba(46, 43, 43, 0.2);
 }
 
 #card {
-    display: flex;
-    gap: 12px;
-    width: 300px;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: .5px solid rgba(223, 250, 244, 0.815);
-    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
-    transition: opacity 0.5s ease;
+  display: flex;
+  gap: 12px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 0.5px solid rgba(223, 250, 244, 0.815);
+  box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.5s ease;
 }
 
 #art {
@@ -26,13 +26,13 @@ body {
 }
 
 #title {
-    font-size: 16px;
-    font-weight: bold;
-    color: rgb(48, 45, 45);
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(48, 45, 45);
 }
 
 #artist {
-  font-size: 13px;
+  font-size: 18px;
   color: #000000;
 }
 
@@ -44,8 +44,14 @@ body {
 }
 
 @keyframes trackChange {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .track-change {
@@ -58,6 +64,12 @@ body {
 }
 
 @keyframes vanish {
- from { opacity: 1; transform: translateY(0); }
-  to   { opacity: 0; transform: translateY(10px); }
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
